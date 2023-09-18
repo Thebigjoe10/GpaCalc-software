@@ -30,12 +30,17 @@ To run this project locally, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/gpa-calculator-web-app.git
-
+   https://github.com/Thebigjoe10/GpaCalc-software.git
    ```
 
+```bash
 2. cd gpa-calculator-web-app
+```
 
+```bash
 3. npm install
+```
 
+```bash
 4. npm start
+```
