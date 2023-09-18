@@ -84,4 +84,3 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 
-Please replace the placeholders (e.g., `your-username`, `feature-name`, etc.) with the appropriate information for your project. This README provides a clear overview of your project, its features, installation instructions, and how to contribute to it.
