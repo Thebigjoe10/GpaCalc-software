@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import GpaDisplay from "./GpaDisplay";
 import GpaInputFields from "./GpaInputFields";
-import DownloadPDFButton from "./DownloadPDFButton"; // Import the DownloadPDFButton component
+import DownloadPDFButton from "./DownloadPDFButton";
 
 const GpaInput = () => {
   const [inputs, setInputs] = useState([

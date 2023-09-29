@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <h1>Gpa Calculator</h1>
-      <CalculateIcon />
+      <CalculateIcon className="icon" />
     </header>
   );
 };

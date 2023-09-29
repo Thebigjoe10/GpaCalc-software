@@ -5,68 +5,70 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   font-family: "Montserrat", sans-serif;
-}
-
-body {
-  
-  padding: 0 16px;
-  
+  background-image: radial-gradient(#324960 0.3438rem, transparent 0.3438rem),
+    radial-gradient(#324960 0.3438rem, transparent 0.3438rem);
+  background-size: 1.1875rem 1.1875rem;
+  background-position: 0 0, 0.5938rem 0.5938rem;
+  background-color: #364051;
+  padding: 0 1rem;
 }
 
 header {
   display: flex;
   justify-content: center;
-  padding: 16px 32px;
+  padding: 1rem 2rem;
 }
 
 header h1 {
-  color: #333333;
+  color: #ffffff;
   font-family: "McLaren", cursive;
   font-weight: 200;
 }
-
+header .icon {
+  width: 5rem;
+  height: 2.5rem;
+  color: #4fc3a1;
+}
 form.create-field {
   position: relative;
-  width: 480px;
-  margin: 30px auto 20px auto;
+  width: 30rem;
+  margin: 1.875rem auto 1.25rem auto;
   background: #fff;
-  padding: 15px;
-  border-radius: 7px;
+  padding: 0.9375rem;
+  border-radius: 0.4375rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
 form.create-field div {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 form.create-field input {
-  width: calc(33.33% - 10px);
-  min-height: 40px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: calc(33.33% - 0.625rem);
+  min-height: 2.5rem;
+  padding: 0.3125rem;
+  border: 0.0625rem solid #364051;
+  border-radius: 0.3125rem;
   outline: none;
   font-family: "McLaren", cursive;
 }
 
 form.create-field span {
   position: absolute;
-  right: 10px;
-  bottom: -48px;
+  right: 0.625rem;
+  bottom: -3rem;
   background: #fff;
   color: #5e5b5b;
   border-radius: 50%;
   border: none;
-  width: 100px;
-  height: 100px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  width: 6.25rem;
+  height: 6.25rem;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
 }
@@ -77,38 +79,30 @@ form.create-field span {
 }
 
 .add:hover {
-  color: #333333;
+  color: #364051;
   transition: all ease-in 0.3s;
-}
-
-input {
-  width: 100%;
-  min-height: 40px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  font-family: "McLaren", cursive;
 }
 
 button.table-result-btn {
   margin-left: 25%;
   width: 45%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid #4fc3a1;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
   text-transform: uppercase;
   font-family: "McLaren", cursive;
+  color: #fff;
+  background: #4fc3a1;
 }
 .table-wrapper {
-  margin: 20px 70px 70px;
-  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+  margin: 1.25rem 4.375rem 4.375rem;
+  box-shadow: 0rem 2.1875rem 3.125rem rgba(0, 0, 0, 0.2);
 }
 .fl-table {
-  border-radius: 5px;
-  font-size: 12px;
+  border-radius: 0.3125rem;
+  font-size: 0.75rem;
   font-weight: normal;
   font-family: "McLaren", cursive;
   border: none;
@@ -122,12 +116,12 @@ button.table-result-btn {
 .fl-table td,
 .fl-table th {
   text-align: center;
-  padding: 8px;
+  padding: 0.5rem;
 }
 
 .fl-table td {
-  border-right: 1px solid #f8f8f8;
-  font-size: 12px;
+  border-right: 0.0625rem solid #f8f8f8;
+  font-size: 0.75rem;
 }
 
 .fl-table thead th {
@@ -146,7 +140,7 @@ button.table-result-btn {
 
 /* Responsive */
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .fl-table {
     display: block;
     width: 100%;
@@ -155,9 +149,9 @@ button.table-result-btn {
     content: "Scroll horizontally >";
     display: block;
     text-align: right;
-    font-size: 11px;
+    font-size: 0.6875rem;
     color: white;
-    padding: 0 0 10px;
+    padding: 0 0 0.625rem;
     font-family: "McLaren", cursive;
   }
   .fl-table thead,
@@ -178,19 +172,19 @@ button.table-result-btn {
   }
   .fl-table td,
   .fl-table th {
-    padding: 20px 0.625em 0.625em 0.625em;
-    height: 60px;
+    padding: 1.25rem 0.625em 0.625em 0.625em;
+    height: 3.75rem;
     vertical-align: middle;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
-    width: 80px;
-    font-size: 13px;
+    width: 5rem;
+    font-size: 0.8125rem;
     text-overflow: ellipsis;
   }
   .fl-table thead th {
     text-align: left;
-    border-bottom: 1px solid #f7f7f9;
+    border-bottom: 0.0625rem solid #f7f7f9;
   }
   .fl-table tbody tr {
     display: table-cell;
@@ -203,10 +197,10 @@ button.table-result-btn {
   }
   .fl-table tr td:nth-child(odd) {
     background: #f8f8f8;
-    border-right: 1px solid #e6e4e4;
+    border-right: 0.0625rem solid #e6e4e4;
   }
   .fl-table tr td:nth-child(even) {
-    border-right: 1px solid #e6e4e4;
+    border-right: 0.0625rem solid #e6e4e4;
   }
   .fl-table tbody td {
     display: block;
@@ -215,22 +209,22 @@ button.table-result-btn {
 }
 /* Media queries for responsiveness */
 /* Small screens (e.g., smartphones) */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 36rem) {
   form.create-field {
     width: 100%;
-    padding: 10px;
+    padding: 0.625rem;
   }
   form.create-field div {
     flex-direction: row;
     align-items: center;
   }
   form.create-field input {
-    width: calc(33.33% - 10px);
-    margin-bottom: 5px;
+    width: calc(33.33% - 0.625rem);
+    margin-bottom: 0.3125rem;
   }
   form.create-field span {
     right: 0;
-    bottom: -38px;
+    bottom: -2.375rem;
   }
   button.table-result-btn {
     margin-left: 0;
@@ -238,16 +232,16 @@ button.table-result-btn {
     text-align: center;
   }
   .add {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 }
 
 /* Medium screens (e.g., tablets) */
-@media screen and (min-width: 577px) and (max-width: 992px) {
+@media screen and (min-width: 36.0625rem) and (max-width: 62rem) {
   /* Adjust styles for medium screens here */
 }
 
 /* Large screens (e.g., desktops) */
-@media screen and (min-width: 993px) {
+@media screen and (min-width: 62.0625rem) {
   /* Adjust styles for large screens here */
 }
