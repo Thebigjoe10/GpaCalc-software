@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import GpaDisplay from "./GpaDisplay";
-import GpaInputFields from "./GpaInputFields"; 
+import GpaInputFields from "./GpaInputFields";
+import DownloadPDFButton from "./DownloadPDFButton"; // Import the DownloadPDFButton component
 
 const GpaInput = () => {
   const [inputs, setInputs] = useState([
@@ -11,6 +12,9 @@ const GpaInput = () => {
       units: "",
     },
   ]);
+
+  // Initialize tableData with an empty array
+  const [tableData, setTableData] = useState([]);
 
   const gradeScale = {
     A: 5.0,
@@ -31,16 +35,23 @@ const GpaInput = () => {
   };
 
   const handleAddInput = () => {
-    setInputs((prevInputs) => {
-      return [
-        ...prevInputs,
-        {
-          course: "",
-          grade: "",
-          units: "",
-        },
-      ];
-    });
+    setInputs((prevInputs) => [
+      ...prevInputs,
+      {
+        course: "",
+        grade: "",
+        units: "",
+      },
+    ]);
+
+    setTableData((prevTableData) => [
+      ...prevTableData,
+      {
+        course: "",
+        grade: "",
+        units: "",
+      },
+    ]);
   };
 
   const calculateGpa = () => {
@@ -59,11 +70,16 @@ const GpaInput = () => {
     });
 
     if (totalUnits === 0) {
-      return "GPA: 0.00"; // To avoid dividing by zero and format to two decimal places
+      return "GPA: 0.00";
     }
 
-    const calculatedGpa = (totalGpa / totalUnits).toFixed(2); // Round to two decimal places
+    const calculatedGpa = (totalGpa / totalUnits).toFixed(2);
     return `GPA: ${calculatedGpa}`;
+  };
+
+  const handleGenerateTable = (e) => {
+    e.preventDefault();
+    setTableData([...inputs]);
   };
 
   return (
@@ -71,12 +87,15 @@ const GpaInput = () => {
       <form className="create-field">
         <GpaInputFields inputs={inputs} handleChange={handleChange} />
         <AddCircleOutlineIcon onClick={handleAddInput} className="add" />
+        <button onClick={handleGenerateTable} className="table-result-btn">
+          Result Table
+        </button>
         <GpaDisplay gpa={calculateGpa()} />
       </form>
+      {/* Add the DownloadPDFButton component and pass necessary props */}
+      <DownloadPDFButton tableData={tableData} calculateGpa={calculateGpa} />
     </div>
   );
 };
-
-
 
 export default GpaInput;

@@ -3,9 +3,9 @@ import React from "react";
 
 const GpaDisplay = ({ gpa }) => {
   return (
-    <button>
+    <span style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
       <p>{gpa}</p>
-    </button>
+    </span>
   );
 };
 
