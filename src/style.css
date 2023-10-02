@@ -82,6 +82,16 @@ form.create-field span {
   color: #364051;
   transition: all ease-in 0.3s;
 }
+.download-pdf-btn {
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid #4fc3a1;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "McLaren", cursive;
+  color: #fff;
+  background: #4fc3a1;
+}
 
 button.table-result-btn {
   margin-left: 25%;
@@ -100,6 +110,7 @@ button.table-result-btn {
   margin: 1.25rem 4.375rem 4.375rem;
   box-shadow: 0rem 2.1875rem 3.125rem rgba(0, 0, 0, 0.2);
 }
+
 .fl-table {
   border-radius: 0.3125rem;
   font-size: 0.75rem;
@@ -138,15 +149,10 @@ button.table-result-btn {
   background: #f8f8f8;
 }
 
-/* Responsive */
-
+/* Responsive styles */
 @media (max-width: 47.9375rem) {
-  .fl-table {
-    display: block;
-    width: 100%;
-  }
   .table-wrapper:before {
-    content: "Scroll horizontally >";
+    content: "";
     display: block;
     text-align: right;
     font-size: 0.6875rem;
@@ -154,59 +160,42 @@ button.table-result-btn {
     padding: 0 0 0.625rem;
     font-family: "McLaren", cursive;
   }
-  .fl-table thead,
-  .fl-table tbody,
+  
   .fl-table thead th {
-    display: block;
-  }
-  .fl-table thead th:last-child {
-    border-bottom: none;
-  }
-  .fl-table thead {
-    float: left;
-  }
-  .fl-table tbody {
-    width: auto;
-    position: relative;
-    overflow-x: auto;
-  }
-  .fl-table td,
-  .fl-table th {
-    padding: 1.25rem 0.625em 0.625em 0.625em;
-    height: 3.75rem;
-    vertical-align: middle;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 5rem;
-    font-size: 0.8125rem;
-    text-overflow: ellipsis;
-  }
-  .fl-table thead th {
-    text-align: left;
+    text-align: center;
     border-bottom: 0.0625rem solid #f7f7f9;
-  }
-  .fl-table tbody tr {
     display: table-cell;
+    height: 2.5rem;
+  } 
+  
+  .fl-table tbody td {
+    width: auto;
+    text-align: center;
+    height: 2.75rem;
   }
+
   .fl-table tbody tr:nth-child(odd) {
     background: none;
+    border-bottom: 0.0625rem solid #e6e4e4;
   }
+
   .fl-table tr:nth-child(even) {
     background: transparent;
   }
+
   .fl-table tr td:nth-child(odd) {
     background: #f8f8f8;
     border-right: 0.0625rem solid #e6e4e4;
+    border-bottom: 0.0625rem solid #e6e4e4;
   }
+
   .fl-table tr td:nth-child(even) {
     border-right: 0.0625rem solid #e6e4e4;
+    border-bottom: 0.0625rem solid #e6e4e4;
   }
-  .fl-table tbody td {
-    display: block;
-    text-align: center;
-  }
-}
+} 
+
+
 /* Media queries for responsiveness */
 /* Small screens (e.g., smartphones) */
 @media screen and (max-width: 36rem) {
@@ -233,6 +222,21 @@ button.table-result-btn {
   }
   .add {
     margin-bottom: 0.625rem;
+  }
+  
+}
+@media screen and  (max-width: 20rem) {
+  header .icon {
+    position: absolute;
+    right: 2rem;
+    top: 4rem;
+  }
+}
+@media screen and (min-width: 23.4375rem) {
+  header .icon {
+    position: absolute;
+    right: .1rem;
+    top: 1.2rem;
   }
 }
 
