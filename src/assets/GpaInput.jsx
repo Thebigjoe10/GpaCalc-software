@@ -16,15 +16,6 @@ const GpaInput = () => {
   // Initialize tableData with an empty array
   const [tableData, setTableData] = useState([]);
 
-  const gradeScale = {
-    A: 5.0,
-    B: 4.0,
-    C: 3.0,
-    D: 2.0,
-    E: 1.0,
-    F: 0.0,
-  };
-
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     setInputs((prevInputs) => {
@@ -54,18 +45,26 @@ const GpaInput = () => {
     ]);
   };
 
+  const gradeScale = {
+    A: 5.0,
+    B: 4.0,
+    C: 3.0,
+    D: 2.0,
+    E: 1.0,
+    F: 0.0,
+  };
+
   const calculateGpa = () => {
     let totalGpa = 0;
     let totalUnits = 0;
 
     inputs.forEach((input) => {
-      const grade = input.grade.toUpperCase();
-      const units = parseFloat(input.units);
+      const { grade, units } = input;
+      const gradePoints = gradeScale[grade.toUpperCase()];
 
-      if (!isNaN(units) && gradeScale[grade]) {
-        const gpa = gradeScale[grade] * units;
-        totalGpa += gpa;
-        totalUnits += units;
+      if (gradePoints !== undefined && !isNaN(units)) {
+        totalGpa += gradePoints * parseFloat(units);
+        totalUnits += parseFloat(units);
       }
     });
 

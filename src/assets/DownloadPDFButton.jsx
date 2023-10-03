@@ -10,27 +10,37 @@ const DownloadPDFButton = ({ calculateGpa, tableData }) => {
 
   const handleDownloadPDF = () => {
     const table = tableRef.current;
-
+  
     if (!table) {
       return;
     }
-
-    const tableHeight = table.offsetHeight;
-
+  
     html2canvas(table).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
-
+  
       const pdf = new jsPDF("p", "mm", "a4");
-      pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
-
-      // Calculate the Y coordinate to position the text below the table
-      const verticalPadding = 10; // Adjust as needed for spacing
-      const textY = tableHeight + verticalPadding;
-
-      pdf.text(10, textY, calculateGpa());
+  
+      // Calculate the table width and height
+      const tableWidth = 190; // Adjust as needed for table width
+      const tableHeight = (canvas.height * tableWidth) / canvas.width;
+  
+      // Calculate the Y coordinate to position the text above the table
+      const textY = 10; // Adjust as needed for spacing above the table
+  
+      // Center the text horizontally
+      const textWidth = pdf.getStringUnitWidth(calculateGpa()) * pdf.internal.getFontSize();
+      const textX = (tableWidth - textWidth) / 2;
+  
+      // Add the image of the table
+      pdf.addImage(imgData, "PNG", 10, textY + pdf.internal.getFontSize(), tableWidth, tableHeight);
+  
+      // Add the GPA text centered above the table
+      pdf.text(textX, textY, calculateGpa());
+  
       pdf.save("table.pdf");
     });
   };
+  
 
   return (
     <div>

@@ -1,4 +1,3 @@
-/* Global styles (no media query) */
 * {
   margin: 0;
   padding: 0;
@@ -160,14 +159,14 @@ button.table-result-btn {
     padding: 0 0 0.625rem;
     font-family: "McLaren", cursive;
   }
-  
+
   .fl-table thead th {
     text-align: center;
     border-bottom: 0.0625rem solid #f7f7f9;
     display: table-cell;
     height: 2.5rem;
-  } 
-  
+  }
+
   .fl-table tbody td {
     width: auto;
     text-align: center;
@@ -193,8 +192,7 @@ button.table-result-btn {
     border-right: 0.0625rem solid #e6e4e4;
     border-bottom: 0.0625rem solid #e6e4e4;
   }
-} 
-
+}
 
 /* Media queries for responsiveness */
 /* Small screens (e.g., smartphones) */
@@ -223,20 +221,12 @@ button.table-result-btn {
   .add {
     margin-bottom: 0.625rem;
   }
-  
 }
-@media screen and  (max-width: 20rem) {
+@media screen and (min-width: 20rem) and (max-width: 23.4375rem) {
   header .icon {
-    position: absolute;
-    right: 2rem;
-    top: 4rem;
-  }
-}
-@media screen and (min-width: 23.4375rem) {
-  header .icon {
-    position: absolute;
-    right: .1rem;
-    top: 1.2rem;
+    position: relative;
+    top: 3rem;
+    right: 1rem;
   }
 }
 
