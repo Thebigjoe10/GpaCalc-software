@@ -58,7 +58,7 @@ const DownloadPDFButton = ({ calculateGpa, tableData }) => {
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8414334205797074"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
     </div>
   );
